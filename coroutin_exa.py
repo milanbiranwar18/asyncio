@@ -1,0 +1,23 @@
+import asyncio
+import time
+
+
+async def say_after(delay, what):
+    await asyncio.sleep(delay)
+    print(what)
+
+
+async def main():
+    """
+    Function for printing the time from function start to run to till stop running
+    """
+    print(f"started at {time.strftime('%X')}")
+
+    await say_after(1, 'hello')
+    await say_after(2, 'world')
+
+    print(f"finished at {time.strftime('%X')}")
+
+if __name__ == '__main__':
+
+    asyncio.run(main())
